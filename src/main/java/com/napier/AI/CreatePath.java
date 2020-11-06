@@ -5,6 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreatePath {
+
+    /**
+     * Starts the the last node and goes through all of the previous nodes until the value of the previous node is -1. If
+     * No route is found then the route will just be the value 0.
+     *
+     * @param caverns - The value of all the caverns explored.
+     * @return - returns the path from the starting node to the final node.
+     */
     public static String findPath(List<Node> caverns) {
         List<Integer> route = new ArrayList<>();
 
@@ -18,11 +26,11 @@ public class CreatePath {
             route.add(0);
 
         String strRoute = "";
-        Collections.reverse(route);
-        for (Integer i : route) {
-            strRoute += (i + " ");
-        }
-        return strRoute.trim();
+        Collections.reverse(route); // Reverses the value of the route.
+        for (Integer i : route)
+            strRoute += (i + " "); // Appends to string.
+
+        return strRoute.trim(); // Trims the last space of the route.
     }
 
 }

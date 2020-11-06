@@ -12,7 +12,7 @@ public class Node {
     private double g;
     private double h;
     private boolean visited;
-    private boolean unvisited;
+    private boolean discovered;
 
     /**
      * @param id    - Allows each node to be identified.
@@ -26,7 +26,7 @@ public class Node {
      *              h - sets h to MAX_VALUE because the value of each distance is infinity as we dont know how far the path is.
      *              estimates the value from the current node to the goal node.
      *              visited - sets visited to false as the program hasn't visited any nodes.
-     *              unvisited - sets unvisited to false as the program isn't currently in an unvisited (not previously visited) node
+     *              discovered - sets discovered to false as the program hasnt discovered the node
      *              previousNode - sets previousNode to -1 as there is no previous nodes to begin with.
      *              Allows program to search for -1 to find original node.
      */
@@ -37,7 +37,7 @@ public class Node {
         g = Double.MAX_VALUE;
         h = Double.MAX_VALUE;
         visited = false;
-        unvisited = false;
+        discovered = false;
         previousNode = -1;
     }
 
@@ -93,12 +93,12 @@ public class Node {
         this.visited = b;
     }
 
-    public boolean getUnvisited() {
-        return unvisited;
+    public boolean getDiscovered() {
+        return discovered;
     }
 
-    public void setUnvisited(Boolean b) {
-        this.unvisited = b;
+    public void setDiscovered(Boolean b) {
+        this.discovered = b;
     }
 }
 
